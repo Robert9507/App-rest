@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PhotoService } from '../service/photo.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(
+    public photoService: PhotoService,
+  ) {}
+
+  deleteRestaurant(index: number) {
+    this.photoService.deleteRestaurant(index);
+  }
 
 }
